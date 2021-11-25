@@ -8,6 +8,7 @@ function call(one,other,method,method_name){
   console.log("-")
   console.log(other)
   console.log(diff)
+  if (method_name !== "diffArrays")
   diff.forEach(function(part){
     // green for additions, red for deletions
     // grey for common parts
@@ -36,8 +37,10 @@ call(one,other,Diff.diffCss,"diffCss")
 one={"name":"John", "age":30, "car":null}
 other={ "age":30,"name":"John", "car":"red"}
 call(one,other,Diff.diffJson,"diffJson")
-//Diff.diffJson
-//Diff.diffArrays
+one=["Saab", "Volvo", "BMW"]
+other=["Saab", "Volvo", "BMM"]
+call(one,other,Diff.diffArrays,"diffArrays")
+
 //Diff.createTwoFilesPatch
 //Diff.createPatch
 //Diff.structuredPatch
